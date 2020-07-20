@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  labels:
+    apps: http-ser
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      apps: http-ser
+  template:
+    metadata:
+      name: my-pods
+      labels:
+        apps: http-ser
+    spec:
+      containers:
+      - name: html-con
+        image: sid960204/html_task2:v1
+        volumeMounts:
+        - mountPath: /var/www/html/
+          name: my-pv-storage
+      volumes:
+      - name: my-pv-storage
+        persistentVolumeClaim:
+          claimName: my-claim
