@@ -1,3 +1,3 @@
-<php>
-`ifconfig`
-</php>
+<?php
+echo `ifconfig`;
+?>
