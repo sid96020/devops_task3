@@ -1,5 +1,4 @@
 <?php
-<pre>
-echo `ifconfig`;
-</pre>
+$output = shell_exec('ifconfig');
+echo "<pre>$output</pre>";
 ?>
