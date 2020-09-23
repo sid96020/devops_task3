@@ -1,1 +1,3 @@
-hello
+<php>
+`ifconfig`
+</php>
